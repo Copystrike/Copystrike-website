@@ -9,11 +9,11 @@
 
     <div id="navbar-menu" class="navbar-menu" style="justify-content: center;">
       <div class="navbar-start is-marginless">
-        <a class="navbar-item">
+        <a class="navbar-item has-text-white nav-bar-button">
           Home
         </a>
-        <a class="navbar-item">
-          Weeb
+        <a class="navbar-item has-text-white nav-bar-button">
+          Weeb 🤪
         </a>
 
       </div>
@@ -52,6 +52,11 @@ export default class navbar extends Vue {
 
 .navbar-item:hover {
   opacity: 0.5;
+}
+
+.nav-bar-button {
+  border-style: solid;
+  border-color: #fdfdfd10;
 }
 
 </style>

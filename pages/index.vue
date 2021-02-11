@@ -1,13 +1,10 @@
 <template>
-  <div class="columns is-variable is-8 mx-5 my-5 is-centered">
-    <div class="column">
+  <div class="columns is-variable is-8 mx-5 my-5 is-centered is-multiline">
+    <div class="column is-full">
       <card title="Social medias" :description="$data.html" style="text-align: center"/>
     </div>
     <div class="column">
-      <card title="About me" description="My name is Nick."/>
-    </div>
-    <div class="column">
-      <card title="Repositories" description="dude tf iswonrn g iwbgf fihtisdf dn"/>
+      <github-repo-card title="My Github Repositories" github-name="Copystrike"></github-repo-card>
     </div>
   </div>
 </template>
@@ -17,7 +14,7 @@ import Vue from 'vue'
 import { Component } from "nuxt-property-decorator";
 
 @Component({
-  name: "Index"
+  name: "index"
 })
 export default class index extends Vue {
 
@@ -28,12 +25,14 @@ export default class index extends Vue {
     this.socialLink("https://discord.bio/p/Nick", "Discord") + "<br/>" +
     this.socialLink("https://soundcloud.com/copynick", "SoundCloud") + "<br/>"
 
-  socialLink(link: string, title: string, icon?: string): string {
+  socialLink(link: string, title: string): string {
     return `<a href='${link}' target="_blank">${title}</a>`;
   }
 
 }
 </script>
+
+//https://api.github.com/users/copystrike/repos
 
 <style lang="css">
 
