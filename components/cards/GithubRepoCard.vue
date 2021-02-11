@@ -4,7 +4,9 @@
       <div class="media-content">
         <div class="card-header-title is-paddingless" v-text="$props.title"/>
         <div class="content">
-          <p>{{ this.$data.githubRepos }}</p>
+          <div v-for="repo in $data.githubRepos" :key="repo.id">
+            <a v-if="!repo.fork" target="_blank" class="subtitle is-6" v-text="repo.name" :href="repo.html_url"></a>
+          </div>
         </div>
       </div>
     </article>
@@ -27,12 +29,14 @@ export default class Card extends Vue {
 
   async data() {
     return {
-      githubRepos
+      githubRepos: []
     }
   }
 
+
+
   async fetch() {
-    this.$data.githubRepos = await this.$axios.$get(`https://api.github.com/users/${this.githubName}/repos`)
+    this.$data.githubRepos = await this.$axios.$get(`https://api.github.com/users/${this.githubName}/repos`);
   }
 }
 </script>
