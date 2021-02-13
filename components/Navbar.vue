@@ -59,7 +59,16 @@ export default class navbar extends Vue {
 
 .nav-bar-button {
   border-style: solid;
-  border-color: #fdfdfd10;
+  border-color: transparent;
+}
+
+.navbar-burger {
+  background-color: #7e6086;
+  border-radius: 5px 25px;
+}
+
+.navbar-menu {
+  background-color: #453D56;
 }
 
 </style>

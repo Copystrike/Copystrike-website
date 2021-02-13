@@ -19,14 +19,21 @@ import { Component } from "nuxt-property-decorator";
 export default class index extends Vue {
 
   html = "" +
-    this.socialLink("https://twitter.com/Nick130202", "Twitter") + "<br/>" +
-    this.socialLink("https://github.com/Copystrike", "Github") + "<br/>" +
-    this.socialLink("https://www.reddit.com/user/ReservedClass", "Reddit") + "<br/>" +
-    this.socialLink("https://discord.bio/p/Nick", "Discord") + "<br/>" +
-    this.socialLink("https://soundcloud.com/copynick", "SoundCloud") + "<br/>"
+    this.socialLink("https://twitter.com/", "Nick130202", "Twitter") + "<br/>" +
+    this.socialLink("https://github.com/", 'Copystrike', "Github") + "<br/>" +
+    this.socialLink("https://www.reddit.com/user/", "ReservedClass", "Reddit") + "<br/>" +
+    this.socialLink("https://discord.bio/p/", "Nick", "Discord") + "<br/>" +
+    this.socialLink("https://soundcloud.com/", "CopyNick", "SoundCloud")
 
-  socialLink(link: string, title: string): string {
-    return `<a id="${title.toLowerCase()}" class="link" href='${link}' target="_blank">${title}</a>`;
+  socialLink(link: string, username: string, title: string): string {
+    return `
+        <a id="${title.toLowerCase()}"
+         class="link is-marginless" href='${link}${username}'
+         target="_blank">
+
+         <strong>${title}</strong>
+         <p class="title is-6" style="">${username}</p>
+         </a>`.trim();
   }
 
 }
@@ -52,7 +59,7 @@ export default class index extends Vue {
 }
 
 .card-header-title {
- color: #453D56;
+  color: #453D56;
 }
 
 .column {
