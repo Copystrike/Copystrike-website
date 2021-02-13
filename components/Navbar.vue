@@ -9,7 +9,7 @@
 
     <div id="navbar-menu" class="navbar-menu" style="justify-content: center;">
       <div class="navbar-start is-marginless">
-        <a class="navbar-item has-text-white nav-bar-button">
+        <a class="navbar-item has-text-white nav-bar-button" style="margin-right: 10px">
           Home
         </a>
         <a class="navbar-item has-text-white nav-bar-button">
@@ -40,6 +40,7 @@ export default class navbar extends Vue {
 }
 </script>
 
+
 <style scoped>
 
 .navbar {
@@ -48,10 +49,12 @@ export default class navbar extends Vue {
 
 .navbar-item {
   border-radius: 5px;
+  color: #cdcfcf !important;
 }
 
 .navbar-item:hover {
-  opacity: 0.5;
+  background-color: unset;
+  border-color: #1F192440;
 }
 
 .nav-bar-button {

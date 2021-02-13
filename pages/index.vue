@@ -26,13 +26,11 @@ export default class index extends Vue {
     this.socialLink("https://soundcloud.com/copynick", "SoundCloud") + "<br/>"
 
   socialLink(link: string, title: string): string {
-    return `<a href='${link}' target="_blank">${title}</a>`;
+    return `<a id="${title.toLowerCase()}" class="link" href='${link}' target="_blank">${title}</a>`;
   }
 
 }
 </script>
-
-//https://api.github.com/users/copystrike/repos
 
 <style lang="css">
 
@@ -40,4 +38,25 @@ export default class index extends Vue {
   width: 1px;
 }
 
+.box {
+  background-color: #7e6086;
+  box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.4), 0 0 0 1px rgba(10, 10, 10, 0.02);
+}
+
+.link {
+  color: #9b8dc1;
+}
+
+.link:hover {
+  color: #908bd0;
+}
+
+.card-header-title {
+ color: #453D56;
+}
+
+.column {
+  padding-left: 12rem !important;
+  padding-right: 12rem !important;
+}
 </style>

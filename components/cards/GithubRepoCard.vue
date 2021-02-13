@@ -2,10 +2,16 @@
   <div class="box">
     <article class="media">
       <div class="media-content">
-        <div class="card-header-title is-paddingless" v-text="$props.title"/>
-        <div class="content">
-          <div v-for="repo in $data.githubRepos" :key="repo.id">
-            <a v-if="!repo.fork" target="_blank" class="subtitle is-6" v-text="repo.name" :href="repo.html_url"></a>
+        <div class="card-title card-header-title is-paddingless"
+             v-text="$props.title"/>
+        <div class="content" style="text-align: center;">
+          <div style="align-items: start" v-for="repo in $data.githubRepos" :key="repo.id" v-if="!repo.fork">
+            <a target="_blank"
+               class="link subtitle is-6"
+               v-text="repo.name"
+               :href="repo.html_url"
+            ></a>
+            <span class="" v-text="repo.language"></span>
           </div>
         </div>
       </div>
@@ -27,16 +33,18 @@ export default class Card extends Vue {
   @Prop()
   githubName?: String;
 
-  async data() {
+  githubRepos = [];
+
+  data() {
     return {
-      githubRepos: []
+      languageColors: {
+        java: "#eb963d"
+      }
     }
   }
 
-
-
   async fetch() {
-    this.$data.githubRepos = await this.$axios.$get(`https://api.github.com/users/${this.githubName}/repos`);
+    this.githubRepos = await this.$axios.$get(`https://api.github.com/users/${this.githubName}/repos`);
   }
 }
 </script>

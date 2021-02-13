@@ -26,10 +26,7 @@ html {
   height: 100%;
   width: 100%;
 
-  background: hsla(208, 11%, 30%, 1);
-  background: linear-gradient(180deg, hsla(208, 11%, 30%, 1) 0%, hsla(150, 6%, 13%, 1) 100%);
-  background: -moz-linear-gradient(180deg, hsla(208, 11%, 30%, 1) 0%, hsla(150, 6%, 13%, 1) 100%);
-  background: -webkit-linear-gradient(180deg, hsla(208, 11%, 30%, 1) 0%, hsla(150, 6%, 13%, 1) 100%);
+  background: #4c3d58;
 }
 
 *,
