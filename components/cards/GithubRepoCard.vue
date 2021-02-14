@@ -7,12 +7,15 @@
         <div class="content" style="text-align: center;">
           <div v-if="!$data.ghRateLimit">
             <div style="align-items: start" v-for="repo in $data.githubRepos" :key="repo.id" v-if="!repo.fork">
+
+              <div class="spacing"></div>
               <fa :icon="fab()[iconName(repo.language)]" :style="{ color: `${languageColor(repo.language)}` }"/>
               <a target="_blank"
                  class="link subtitle is-6"
-                 v-text="repo.name"
-                 :href="repo.html_url"
-              ></a>
+                 :href="repo.html_url">
+                <strong style="color: #9b8dc1">{{repo.name}}</strong>
+                <br/><p class="title is-7" style="color: #8884c4">{{ repo.description }}</p>
+              </a>
             </div>
           </div>
           <div v-else style="overflow: hidden">
@@ -56,7 +59,7 @@ export default class Card extends Vue {
   }
 
   iconName(languageName: string): string {
-    if (languageName) return "github";
+    if (!languageName) return "faGithub";
     let iconName: string = "fa";
     switch (languageName.toLowerCase()) {
       case "java":
@@ -74,7 +77,7 @@ export default class Card extends Vue {
 
   languageColor(languageName: string): string {
     let iconColor: string = "pink";
-    if (languageName) return "github";
+    if (!languageName) return iconColor;
     switch (languageName.toLowerCase()) {
       case "java":
         iconColor = "#DE6666";
@@ -98,4 +101,5 @@ export default class Card extends Vue {
 </script>
 
 <style scoped>
+
 </style>

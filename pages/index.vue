@@ -19,20 +19,20 @@ import { Component } from "nuxt-property-decorator";
 export default class index extends Vue {
 
   html = "" +
-    this.socialLink("https://twitter.com/", "Nick130202", "Twitter") + "<br/>" +
-    this.socialLink("https://github.com/", 'Copystrike', "Github") + "<br/>" +
-    this.socialLink("https://www.reddit.com/user/", "ReservedClass", "Reddit") + "<br/>" +
-    this.socialLink("https://discord.bio/p/", "Nick", "Discord") + "<br/>" +
+    this.socialLink("https://twitter.com/", "Nick_vn", "Twitter") + "<div class='spacing'></div>" +
+    this.socialLink("https://github.com/", 'Copystrike', "Github") + "<div class='spacing'></div>" +
+    this.socialLink("https://www.reddit.com/user/", "ReservedClass", "Reddit") + "<div class='spacing'></div>" +
+    this.socialLink("https://discord.bio/p/", "Nick", "Discord") + "<div class='spacing'></div>" +
     this.socialLink("https://soundcloud.com/", "CopyNick", "SoundCloud")
 
   socialLink(link: string, username: string, title: string): string {
     return `
         <a id="${title.toLowerCase()}"
-         class="link is-marginless" href='${link}${username}'
+         class="link title is-5" href='${link}${username}'
          target="_blank">
 
          <strong>${title}</strong>
-         <p class="title is-6" style="">${username}</p>
+         <p class="title is-7" style="color: #8884c4">${username}</p>
          </a>`.trim();
   }
 
@@ -65,5 +65,9 @@ export default class index extends Vue {
 .column {
   padding-left: 12rem !important;
   padding-right: 12rem !important;
+}
+
+.spacing {
+  margin-bottom: 10px;
 }
 </style>
