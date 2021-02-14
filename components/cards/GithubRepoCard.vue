@@ -4,7 +4,7 @@
       <div class="media-content">
         <div class="card-title card-header-title is-paddingless"
              v-text="$props.title"/>
-        <div class="content" style="text-align: center;">
+        <div class="content is-clipped" style="text-align: center;">
           <div v-if="!$data.ghRateLimit">
             <div style="align-items: start" v-for="repo in $data.githubRepos" :key="repo.id" v-if="!repo.fork">
 
@@ -18,7 +18,7 @@
               </a>
             </div>
           </div>
-          <div v-else style="overflow: hidden">
+          <div v-else>
             <p class="title">Rate limited :/</p>
           </div>
         </div>

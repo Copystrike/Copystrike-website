@@ -1,9 +1,9 @@
 <template>
-  <div class="columns is-variable is-8 mx-5 my-5 is-centered is-multiline">
-    <div class="column is-full">
+  <div class="columns is-mobile is-multiline is-8 my-5">
+    <div id="container-1" class="column">
       <card title="Social medias" :description="$data.html" style="text-align: center"/>
     </div>
-    <div class="column">
+    <div id="container-2" class="column">
       <github-repo-card title="My Github Repositories" github-name="Copystrike"></github-repo-card>
     </div>
   </div>
@@ -62,9 +62,12 @@ export default class index extends Vue {
   color: #453D56;
 }
 
-.column {
-  padding-left: 12rem !important;
-  padding-right: 12rem !important;
+#container-1 {
+  padding-left: 12rem;
+}
+
+#container-2 {
+  padding-right: 12rem;
 }
 
 .spacing {

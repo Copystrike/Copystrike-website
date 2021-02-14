@@ -3,7 +3,7 @@
     <article class="media">
       <div class="media-content">
         <div class="card-header-title is-paddingless" v-text="$props.title"/>
-        <div class="content">
+        <div class="content is-clipped">
           <p v-html="$props.description"/>
         </div>
       </div>
