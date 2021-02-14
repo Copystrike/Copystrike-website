@@ -1,5 +1,5 @@
 <template>
-  <div class="columns is-mobile is-multiline is-8 my-5">
+  <div class="columns is-mobile is-multiline is-8 m-5">
     <div id="container-1" class="column">
       <card title="Social medias" :description="$data.html" style="text-align: center"/>
     </div>
@@ -60,14 +60,6 @@ export default class index extends Vue {
 
 .card-header-title {
   color: #453D56;
-}
-
-#container-1 {
-  padding-left: 12rem;
-}
-
-#container-2 {
-  padding-right: 12rem;
 }
 
 .spacing {
