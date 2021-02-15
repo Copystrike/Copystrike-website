@@ -32,7 +32,8 @@ import { Component, Vue, Prop } from 'nuxt-property-decorator';
 import { fab } from '@fortawesome/free-brands-svg-icons'
 
 @Component({
-  name: 'GithubRepoCard'
+  name: 'GithubRepoCard',
+  fetchOnServer: false
 })
 export default class Card extends Vue {
 
